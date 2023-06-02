@@ -17,5 +17,14 @@ function createObject(texture) {
     var cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
   }
+  function animate() {
+    requestAnimationFrame(animate);
+  
+    // Rotate the object
+    scene.children[0].rotation.x += 0.01;
+    scene.children[0].rotation.y += 0.01;
+  
+    renderer.render(scene, camera);
+  }
   
   
