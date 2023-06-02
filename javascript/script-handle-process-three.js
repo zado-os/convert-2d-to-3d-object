@@ -1,5 +1,8 @@
 var scene, camera, renderer;
 
+// function initializes the Three.js scene, camera, and renderer.
+//It creates a scene, sets up a perspective camera,
+//and adds a WebGL renderer to the HTML document.
 function init() {
   scene = new THREE.Scene();
 
@@ -15,13 +18,16 @@ function init() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
 }
-
+// function creates a 3D object (a cube) using a provided texture.
+//It uses a BoxGeometry to define the cube's shape and applies a MeshBasicMaterial with the given texture to the cube.
+//Finally, it adds the cube to the scene.
 function createObject(texture) {
   var geometry = new THREE.BoxGeometry(1, 1, 1);
   var material = new THREE.MeshBasicMaterial({ map: texture });
   var cube = new THREE.Mesh(geometry, material);
   scene.add(cube);
 }
+// function is a recursive animation loop
 function animate() {
   requestAnimationFrame(animate);
 
@@ -31,7 +37,7 @@ function animate() {
 
   renderer.render(scene, camera);
 }
-
+// function is the event handler for the file upload input. It reads the selected image file using a FileReader
 function handleImageUpload(event) {
   var file = event.target.files[0];
   var reader = new FileReader();
@@ -50,7 +56,7 @@ function handleImageUpload(event) {
 
   reader.readAsDataURL(file);
 }
-
+// function is called initially to set up the scene, camera, and renderer.
 init();
 document
   .getElementById("imageUpload")
