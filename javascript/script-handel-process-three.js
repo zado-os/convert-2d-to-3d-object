@@ -11,3 +11,11 @@ function init() {
   document.body.appendChild(renderer.domElement);
 }
 
+function createObject(texture) {
+    var geometry = new THREE.BoxGeometry(1, 1, 1);
+    var material = new THREE.MeshBasicMaterial({ map: texture });
+    var cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+  }
+  
+  
