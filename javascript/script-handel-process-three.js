@@ -42,9 +42,9 @@ function createObject(texture) {
       };
       image.src = event.target.result;
     };
-  
+
     reader.readAsDataURL(file);
-  }
-  
-  
-  
+}
+
+init();
+document.getElementById('imageUpload').addEventListener('change', handleImageUpload, false);
