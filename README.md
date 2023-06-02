@@ -1,8 +1,8 @@
 ﻿# convert-2d-to-3d-object
 
-##Scop : convert face from 2d to 3d
+## Scop : convert face from 2d to 3d
 
-##Discription : 
+## Discription : 
 
 1- The **init** function initializes the Three.js scene, camera, and renderer. It creates a scene, sets up a perspective camera, and adds a WebGL renderer to the HTML document.
 
