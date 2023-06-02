@@ -27,4 +27,24 @@ function createObject(texture) {
     renderer.render(scene, camera);
   }
   
+  function handleImageUpload(event) {
+    var file = event.target.files[0];
+    var reader = new FileReader();
+  
+    reader.onload = function (event) {
+      var image = new Image();
+      image.onload = function () {
+        var texture = new THREE.Texture(image);
+        texture.needsUpdate = true;
+  
+        createObject(texture);
+        animate();
+      };
+      image.src = event.target.result;
+    };
+  
+    reader.readAsDataURL(file);
+  }
+  
+  
   
